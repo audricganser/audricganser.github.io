@@ -1,0 +1,32 @@
+.contact, .subs {
+  margin-bottom: 0;
+}
+
+.contact-info {
+  float: right;
+}
+
+@media print {
+  #Header, #Footer {
+    display: none !important;
+  }
+  .resume-title {
+    width: 500px;
+    float: left;
+  }
+  .contact-info {
+    width: 200px;
+    float: right;
+  }
+  .section {
+    font-size: 20px;
+    margin-top: 5px;
+    margin-bottom: 7px;
+  }
+  .first {
+    margin-top: 0px;
+  }
+  .no-print {
+    display: none;
+  }
+}

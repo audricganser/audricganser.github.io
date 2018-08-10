@@ -1,0 +1,145 @@
+/**{
+	border: 1px solid red !important;
+}*/
+
+.title {
+	float: right;
+	margin-top: 5px;
+	display: flex;
+	font-family: 'Pacifico', cursive;
+}
+
+h2 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+}
+
+h3 {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+}
+
+.time {
+	margin-bottom: 2px;
+	font-size: 11px;
+    	color: gray;
+}
+
+hr {
+    	margin-bottom: 34px;
+    	border: none;
+    	color: white;
+    	height: 1px;
+    	background: black;
+    	background: -webkit-gradient(radial, 50% 50%, 0, 50% 50%, 630, from(#000), to(#fff));
+}
+
+ul {
+	margin-top: 10px;
+}
+
+.col-md-4 > h3 {
+	margin-top: 10px;
+	margin-bottom: 20px;
+}
+
+/** hover, position, size of glyphicons **/
+
+a:hover,
+a:focus {
+  	color: #333333;
+  	text-decoration: none;
+}
+
+.col-xs-6 {
+	width: auto;
+	padding: 15px 0px 15px 15px;
+}
+
+.fa-print {
+    	font-size: 25px !important;
+    	float: right;
+    	margin-top: 10px;
+}
+
+.fa {
+	color: #777777;
+	font-size: 20px;
+	padding-right: 10px;
+}
+
+.img-thumbnail {
+	cursor: pointer;
+	border: 2px solid black;
+	width: 300px;
+	height: 200px;
+}
+
+.img-responsive {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+  	padding-bottom: 19px;
+}
+
+.navbar-nav {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 400;
+}
+
+.navbar-toggle {
+	float: left;
+	margin-left: 15px;
+}
+
+.contact, .subs {
+	margin-bottom: 0;
+}
+
+.contact-info {
+	float: right;
+}
+
+.facebook-glyphicon {
+	font-weight: 500;
+	color:	white;
+}
+
+@media (max-width: 992px) {
+  .title {
+  	margin-top: 10px;
+  	font-size: 25px;
+  }
+  .contact-info {
+  	float: none;
+  }
+}
+
+@media print {
+	#Header, #Footer { 
+		display: none !important; 
+	}
+	.resume-title {
+		width: 500px;
+		float: left;
+	}
+	.contact-info {
+		width: 200px;
+		float: right;
+	}
+	.section {
+		font-size: 20px;
+		margin-top: 5px;
+		margin-bottom: 7px;
+	}
+	.first {
+		margin-top: 0px;
+	}
+	.no-print {
+  		display: none;
+  	}
+}

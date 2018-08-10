@@ -1,0 +1,49 @@
+#nav-item-icons {
+  padding-top: 10px;
+  padding-left: 10px;
+  display: flex;
+}
+
+.navbar {
+  margin-bottom: 2%;
+}
+
+.navbar-brand {
+  display: inline;
+  position: relative;
+  font: x-large Helvetica, Sans-Serif;
+  letter-spacing: -2px;
+  color: rgba(0,0,255,0.5);
+}
+
+.navbar-brand:after {
+  content: "Audric Ganser";
+  position: absolute; left: 1px; top: 6px;
+  color: rgba(255, 0, 0, 0.5);
+}
+
+
+/** hover, position, size of glyphicons **/
+
+a:hover,
+a:focus {
+  color: #333333;
+  text-decoration: none;
+}
+
+.fa-print {
+  font-size: 25px !important;
+  float: right;
+  margin-top: 10px;
+}
+
+.fa {
+  color: #777777;
+  font-size: 20px;
+  padding-right: 10px;
+}
+
+.facebook-glyphicon {
+  font-weight: 500;
+  color:	white;
+}
