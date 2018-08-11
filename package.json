@@ -6,7 +6,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build --prod",
-    "deploy": "ngh",
+    "deploy": "ngh --branch=master",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"

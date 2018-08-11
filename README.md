@@ -12,7 +12,10 @@ Run `ng generate component component-name` to generate a new component. You can 
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+
+## Deploy
+Run `ngh --branch=master` to deploy the project. The Angular project will delete existing items from project repo and push new items. If `branch` is not specified ngh will create new branch `gh-pages` and push project there.
 
 ## Running unit tests
 
