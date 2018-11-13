@@ -11,37 +11,37 @@ export class ProjectsComponent implements OnInit {
   projects: Project[] = [
     {
       name: "Project 2021",
-      descript: "null",
+      descript: "Fixed and altered advertising images using Photoshop",
       img: "thumb-Project2021.png",
       link: "http://test.project2021.utexas.edu/development-studio/"
     },
     {
       name: "La Belle TBH",
-      descript: "null",
+      descript: "Flash to Javascript module",
       img: "thumb-LaBelleTBH.png",
       link:"http://www.texasbeyondhistory.net/belle/explore.html"
     },
     {
       name: "What Jane Saw Catalogue",
-      descript: "null",
+      descript: "Update on Catalogue Javascipt Library",
       img: "thumb-WhatJaneSaw.png",
       link:"http://www.nytimes.com/2015/12/17/arts/design/for-a-shakespeare-anniversary-an-online-re-creation-of-a-1796-show.html"
     },
     {
       name: "Tertis Pavlov",
-      descript: "null",
+      descript: "Creating of banner image",
       img: "thumb-TertisPavlov.png",
       link:"http://sites.utexas.edu/tertispavlovproject/"
     },
     {
       name: "Lifespan Dev Lab",
-      descript: "null",
+      descript: "Samples of banner image",
       img: "thumb-LifespanDevLab.png",
       link:"http://labs.la.utexas.edu/tucker-drob/"
     },
     {
       name:  "Child Dev In Context Lab",
-      descript: "null",
+      descript: "Creation and use of banner image",
       img: "thumb-ChildDevInContextLab.png",
       link:"http://labs.la.utexas.edu/neal/"
     }

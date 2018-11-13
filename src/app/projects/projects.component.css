@@ -14,3 +14,22 @@
   margin-right: auto;
   margin-left: auto;
 }
+
+.project-info {
+  width: 300px;
+  margin: auto;
+  text-align: left;
+}
+
+a:hover {
+    color: #000;
+}
+
+.project-name {
+  color: #000;
+  margin-bottom: 0;
+}
+
+.project-description {
+  color: #666;
+}

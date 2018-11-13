@@ -12,16 +12,7 @@
   display: inline;
   position: relative;
   font: x-large Helvetica, Sans-Serif;
-  letter-spacing: -2px;
-  color: rgba(0,0,255,0.5);
 }
-
-.navbar-brand:after {
-  content: "Audric Ganser";
-  position: absolute; left: 1px; top: 6px;
-  color: rgba(255, 0, 0, 0.5);
-}
-
 
 /** hover, position, size of glyphicons **/
 
