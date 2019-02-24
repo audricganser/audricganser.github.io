@@ -85,6 +85,9 @@ a.project:hover h3 {
   height: 100px;
   box-shadow: inset 0 0 10px rgba(0,0,0,.3);
 }
+.project.terrformneptunegremlin:before {
+  background: url(../img/terrformneptunegremlin.png) -41px -226px no-repeat;
+}
 .project.texasbeyondhistory:before {
   background: url(../img/texasbeyondhistory.png) -41px -226px no-repeat;
 }
