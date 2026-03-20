@@ -21,6 +21,8 @@
   --link-bg-hover: rgba(255, 255, 255, 0.9);
   --hero-a: rgba(79, 184, 178, 0.36);
   --hero-b: rgba(47, 106, 74, 0.2);
+  --surface-light: rgba(255, 255, 255, 1);
+  --surface-light-reverse: rgba(0, 0, 0, 1);
 }
 
 :root[data-theme='dark'] {
@@ -43,6 +45,8 @@
   --link-bg-hover: rgba(24, 44, 49, 0.8);
   --hero-a: rgba(96, 215, 207, 0.18);
   --hero-b: rgba(110, 200, 154, 0.12);
+  --surface-light-reverse: rgba(255, 255, 255, 1);
+  --surface-light: rgba(0, 0, 0, 1);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -66,6 +70,8 @@
     --link-bg-hover: rgba(24, 44, 49, 0.8);
     --hero-a: rgba(96, 215, 207, 0.18);
     --hero-b: rgba(110, 200, 154, 0.12);
+    --surface-light-reverse: rgba(255, 255, 255, 1);
+    --surface-light: rgba(0, 0, 0, 1);
   }
 }
 
@@ -82,7 +88,7 @@ body,
 body {
   margin: 0;
   overflow-x: hidden;
-  background-color: var(--surface);
+  background-color: var(--surface-light);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

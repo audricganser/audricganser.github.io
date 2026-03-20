@@ -1,7 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Canvas, useFrame } from '@react-three/fiber'
-import { OrbitControls, Environment, RoundedBox, Center, Text3D, View, PerspectiveCamera } from '@react-three/drei'
-import { useRef } from 'react'
+import { ThreeGrid } from '@/components/Grid'
+import {
+  OrbitControls,
+  Environment,
+  RoundedBox,
+  PerspectiveCamera,
+} from '@react-three/drei'
+import { Suspense, useRef } from 'react'
 import { Mesh } from 'three'
 import styles from './index.module.scss'
 
@@ -11,43 +17,49 @@ function App() {
   const ref = useRef<HTMLDivElement>(null!)
 
   return (
-    <div ref={ref} className={styles.root} >
-        <View index={1} className={styles.view1}>
-          <Text />
-          <PerspectiveCamera makeDefault position={[0, 0, 5]} />
-          <Environment preset="warehouse" />
-        </View>
-
-        <View index={2} className={styles.view2}>
-          <Cube />
+    <div ref={ref} className={styles.root}>
+      <Canvas
+        eventSource={ref}
+        gl={{
+          antialias: true,
+          powerPreference: 'high-performance',
+          failIfMajorPerformanceCaveat: false,
+        }}
+        dpr={1}
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none',
+        }}
+      >
+        <Suspense fallback={null}>
+          <PerspectiveCamera makeDefault position={[0, 5, 12]} fov={50} />
           <OrbitControls
+            makeDefault
             enablePan={false}
-            enableZoom={false}
+            minDistance={5}
+            maxDistance={20}
           />
-          <PerspectiveCamera makeDefault position={[0, -1, 3]} />
-          <Environment preset="warehouse" />
-        </View>
 
+          <ThreeGrid />
+          <Environment preset="city" />
 
-        <Canvas
-          eventSource={ref}
-          gl={{
-            antialias: true,
-            powerPreference: "high-performance",
-            failIfMajorPerformanceCaveat: false
-          }}
-          dpr={[1, 2]}
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            pointerEvents: 'none'
-          }}
-        >
-          <View.Port />
-        </Canvas>
+          <group position={[0, 0, 0]}>
+            <Cube />
+          </group>
+
+          <ambientLight intensity={0.5} />
+          <spotLight
+            position={[10, 10, 10]}
+            angle={0.15}
+            penumbra={1}
+            intensity={Math.PI}
+          />
+        </Suspense>
+      </Canvas>
     </div>
   )
 }
@@ -58,10 +70,10 @@ const Cube = () => {
   useFrame((_state, delta) => {
     if (meshRef.current) {
       const speed = 0.2
-      meshRef.current.rotation.x += delta * speed;
-      meshRef.current.rotation.y += delta * speed;
+      meshRef.current.rotation.x += delta * speed
+      meshRef.current.rotation.y += delta * speed
     }
-  });
+  })
 
   return (
     <>
@@ -76,26 +88,16 @@ const Cube = () => {
         </RoundedBox>
       </mesh>
       <ambientLight intensity={Math.PI / 2} />
-      <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} decay={0} intensity={Math.PI} />
+      <spotLight
+        position={[10, 10, 10]}
+        angle={0.15}
+        penumbra={1}
+        decay={0}
+        intensity={Math.PI}
+      />
       <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
     </>
   )
 }
 
-const Text = () => {
-  const fontUrl = 'https://raw.githubusercontent.com/mrdoob/three.js/master/examples/fonts/helvetiker_bold.typeface.json'
-  return (
-    <>
-      <Center>
-        <Text3D
-          font={fontUrl}
-          size={1}
-          height={0.05}
-        >
-          New Portfolio Coming Soon
-          <meshStandardMaterial metalness={1} roughness={0.15} color="white" />
-        </Text3D>
-      </Center>
-    </>
-  )
-}
+

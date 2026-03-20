@@ -1,0 +1,16 @@
+.root {
+    background-color: var(--surface-light);
+    color: var(--surface-light-reverse);
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 2rem;
+    border: 2px solid var(--surface-light-reverse);
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+
+    &:hover {
+        background-color: var(--surface-light-reverse);
+        color: var(--surface-light);
+        transition: 0.3s;
+    }
+}
