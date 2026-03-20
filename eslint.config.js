@@ -7,14 +7,19 @@ export default [
   {
     rules: {
       'import/no-cycle': 'off',
-      'import/order': 'off',
-      'sort-imports': 'off',
+      'import/order': 'error',
+      'sort-imports': 'error',
       '@typescript-eslint/array-type': 'off',
       '@typescript-eslint/require-await': 'off',
       'pnpm/json-enforce-catalog': 'off',
     },
   },
   {
-    ignores: ['eslint.config.js', 'prettier.config.js'],
+    ignores: [
+      'eslint.config.js',
+      'prettier.config.js',
+      '.output/**',
+      'dist/**',
+    ],
   },
 ]

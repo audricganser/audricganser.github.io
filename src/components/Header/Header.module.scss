@@ -1,3 +1,12 @@
+@keyframes linkColors {
+  from {
+    fill: white;
+  }
+  to {
+    fill: black;
+  }
+}
+
 .root {
   display: flex;
   flex-direction: column;
@@ -7,15 +16,31 @@
   height: 10rem;
 
   .title {
+    color: white;
   }
 
   .contact {
     display: flex;
     gap: 0.5rem;
-    svg {
+
+    a {
+      display: inline-flex;
       width: 20px;
       height: 20px;
-      fill: currentColor;
+      cursor: pointer;
+
+      &:hover svg {
+        animation-name: linkColors;
+        animation-duration: .25s;
+        animation-fill-mode: forwards;
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        fill: white;
+        pointer-events: none;
+      }
     }
   }
 }
