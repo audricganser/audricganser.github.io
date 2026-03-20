@@ -5,8 +5,8 @@ Welcome to your new TanStack Start app!
 To run this application:
 
 ```bash
-yarn install
-yarn run dev
+pnpm install
+pnpm run dev
 ```
 
 # Building For Production
@@ -14,7 +14,7 @@ yarn run dev
 To build this application for production:
 
 ```bash
-yarn run build
+pnpm run build
 ```
 
 ## Testing
@@ -22,21 +22,12 @@ yarn run build
 This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
 
 ```bash
-yarn run test
+pnpm run test
 ```
 
 ## Styling
 
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-### Removing Tailwind CSS
-
-If you prefer not to use Tailwind CSS:
-
-1. Remove the demo pages in `src/routes/demo/`
-2. Replace the Tailwind import in `src/styles.css` with your own styles
-3. Remove `tailwindcss()` from the plugins array in `vite.config.ts`
-4. Uninstall the packages: `yarn add @tailwindcss/vite tailwindcss --dev`
+This project uses SCSS modules and custom styling
 
 ## Linting & Formatting
 
@@ -44,9 +35,9 @@ If you prefer not to use Tailwind CSS:
 This project uses [eslint](https://eslint.org/) and [prettier](https://prettier.io/) for linting and formatting. Eslint is configured using [tanstack/eslint-config](https://tanstack.com/config/latest/docs/eslint). The following scripts are available:
 
 ```bash
-yarn run lint
-yarn run format
-yarn run check
+pnpm run lint
+pnpm run format
+pnpm run check
 ```
 
 
