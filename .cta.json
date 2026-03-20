@@ -1,0 +1,18 @@
+{
+  "projectName": "aganser.com",
+  "mode": "file-router",
+  "typescript": true,
+  "packageManager": "yarn",
+  "includeExamples": true,
+  "tailwind": false,
+  "addOnOptions": {},
+  "envVarValues": {},
+  "git": false,
+  "routerOnly": false,
+  "version": 1,
+  "framework": "react",
+  "chosenAddOns": [
+    "eslint",
+    "nitro"
+  ]
+}
