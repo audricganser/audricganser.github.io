@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import styles from './ThemeToggle.module.scss'
+import { Button } from '@/components/Button'
 
 type ThemeMode = 'light' | 'dark' | 'auto'
 
@@ -69,14 +69,13 @@ export default function ThemeToggle() {
       : `Theme mode: ${mode}. Click to switch mode.`
 
   return (
-    <button
+    <Button
       type="button"
       onClick={toggleMode}
       aria-label={label}
       title={label}
-      className={styles.root}
     >
       {mode === 'auto' ? 'Auto' : mode === 'dark' ? 'Dark' : 'Light'}
-    </button>
+    </Button>
   )
 }

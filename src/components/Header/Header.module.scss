@@ -1,5 +1,5 @@
 .root {
-  position: relative; // Absolute children will stay inside this box
+  position: relative;
   display: flex;
   flex-direction: column;
   flex: 1;
@@ -11,7 +11,7 @@
 
   .toggleWrapper {
     position: absolute;
-    top: 1rem;
+    top: 1.25rem;
     right: 1rem;
     z-index: 10;
   }
