@@ -96,8 +96,8 @@ export const Lesson3 = () => {
         ))}
         <h3>Extras:</h3>
         <p>
-          <strong>Wireframe Toggle:</strong> to show that this is a BoxGeometry
-          and not just a square
+          <strong>Wireframe Toggle:</strong> Toggle to show that this is a
+          BoxGeometry and not just a square.
         </p>
         <p>
           <strong>Resize Width:</strong> The lesson provided an object with set
