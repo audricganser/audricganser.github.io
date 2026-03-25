@@ -1,0 +1,16 @@
+.lessonText {
+  padding-bottom: 1rem;
+  li {
+    margin: 0 1rem;
+  }
+}
+
+.canvas {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  canvas {
+    border: 2px solid var(--surface-light-reverse)
+  }
+}
