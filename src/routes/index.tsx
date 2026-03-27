@@ -145,6 +145,7 @@ const Cube = () => {
   const lastFoundId = useRef<string | null>(null)
   const materialRef = useRef<MeshStandardMaterial>(null!)
   const labelRef = useRef<HTMLDivElement>(null!)
+  const codeRef = useRef<HTMLElement>(null!)
   const [, get] = useKeyboardControls()
   // const navigate = useNavigate()
 
@@ -183,16 +184,12 @@ const Cube = () => {
     const foundId = found ? found.id : null
 
     // 3. Update DOM via Ref (Zero re-renders!)
-    if (foundId !== lastFoundId.current) {
-      lastFoundId.current = foundId
-      if (labelRef.current) {
-        labelRef.current.style.visibility = found ? 'visible' : 'hidden'
-        if (found) {
-          const codeTag = labelRef.current.querySelector('code')
-          if (codeTag) codeTag.innerText = found.name
-        }
-      }
-    }
+    // if (foundId !== lastFoundId.current) {
+    //   lastFoundId.current = foundId
+    //   if (labelRef.current)
+    //     labelRef.current.style.opacity = found ? '1' : '0.01'
+    //   if (found && codeRef.current) codeRef.current.innerText = found.name
+    // }
 
     // // 4. Navigation
     // if (jump && found) {
@@ -240,7 +237,7 @@ const Cube = () => {
             color={colors.white}
           />
         </RoundedBox>
-        <Html
+        {/* <Html
           visible={false}
           distanceFactor={10}
           position={[0, 0, 0.5]}
@@ -250,11 +247,16 @@ const Cube = () => {
           <div
             ref={labelRef}
             className={styles.cubeLabel}
-            style={{ visibility: 'hidden' }} // Start hidden
+            style={{
+              opacity: 0.01,
+              transition: 'opacity 0.1s ease-out', // Smooths the pop
+              pointerEvents: 'none',
+              willChange: 'opacity, transform', // Tells the browser to use the GPU
+            }}
           >
-            <code>{/* Managed by Ref */}</code>
+            <code ref={codeRef}></code>
           </div>
-        </Html>
+        </Html> */}
       </mesh>
       {PROJECTS.map((project) => {
         const width = project.maxX - project.minX
