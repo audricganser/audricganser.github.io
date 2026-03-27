@@ -17,5 +17,5 @@ export const ThreeGrid = () => {
     infiniteGrid: true,
   }
 
-  return <Grid {...gridOptions} position={[0, -3.0, 0.0]} side={2}  />
+  return <Grid {...gridOptions} position={[0, 0, 0]} side={2}  />
 }
