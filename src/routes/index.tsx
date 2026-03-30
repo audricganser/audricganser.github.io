@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router'
+import { createFileRoute, Link } from '@tanstack/react-router'
 import { Canvas, useFrame } from '@react-three/fiber'
 import { ThreeGrid } from '@/components/Grid'
 import {
@@ -6,6 +6,7 @@ import {
   Environment,
   RoundedBox,
   PerspectiveCamera,
+  Html,
 } from '@react-three/drei'
 import { Suspense, useRef } from 'react'
 import { Mesh } from 'three'
@@ -17,7 +18,10 @@ function App() {
   const ref = useRef<HTMLDivElement>(null!)
 
   return (
-    <div ref={ref} className={styles.root}>
+    <div
+      ref={ref}
+      className={styles.root}
+    >
       <Canvas
         eventSource={ref}
         gl={{
@@ -36,7 +40,11 @@ function App() {
         }}
       >
         <Suspense fallback={null}>
-          <PerspectiveCamera makeDefault position={[0, 5, 12]} fov={50} />
+          <PerspectiveCamera
+            makeDefault
+            position={[0, 5, 12]}
+            fov={50}
+          />
           <OrbitControls
             makeDefault
             enablePan={false}
@@ -84,7 +92,11 @@ const Cube = () => {
           radius={0.1}
           smoothness={4}
         >
-          <meshStandardMaterial metalness={1} roughness={0.1} color="white" />
+          <meshStandardMaterial
+            metalness={1}
+            roughness={0.1}
+            color="white"
+          />
         </RoundedBox>
       </mesh>
       <ambientLight intensity={Math.PI / 2} />
@@ -95,9 +107,11 @@ const Cube = () => {
         decay={0}
         intensity={Math.PI}
       />
-      <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
+      <pointLight
+        position={[-10, -10, -10]}
+        decay={0}
+        intensity={Math.PI}
+      />
     </>
   )
 }
-
-
