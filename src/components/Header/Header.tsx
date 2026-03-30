@@ -9,28 +9,32 @@ export const Header = () => {
       <div className={styles.toggleWrapper}>
         <ThemeToggle />
       </div>
-      <h1 className={styles.title}>Audric Ganser</h1>
-      <p className={styles.title}>A software engineer based in Austin, TX</p>
-      <p className={styles.contact}>
-        <a
-          href="//github.com/audricganser"
-          title="GitHub"
-        >
-          <Github />
-        </a>
-        <a
-          href="//www.linkedin.com/in/aganser"
-          title="Linkedin"
-        >
-          <LinkedIn />
-        </a>
-        <a
-          href="mailto:audricganser@gmail.com"
-          title="Email"
-        >
-          <Mail />
-        </a>
-      </p>
+      <div className={styles.mainHeader}>
+        <h1 className={styles.title}>Audric Ganser</h1>
+        <p className={styles.subTitle}>
+          A software engineer based in Austin, TX
+        </p>
+        <p className={styles.contact}>
+          <a
+            href="//github.com/audricganser"
+            title="GitHub"
+          >
+            <Github />
+          </a>
+          <a
+            href="//www.linkedin.com/in/aganser"
+            title="Linkedin"
+          >
+            <LinkedIn />
+          </a>
+          <a
+            href="mailto:audricganser@gmail.com"
+            title="Email"
+          >
+            <Mail />
+          </a>
+        </p>
+      </div>
       <Navigation />
     </header>
   )

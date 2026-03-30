@@ -1,3 +1,5 @@
+@use '../../styles/variables' as v;
+
 .root {
   position: absolute;
   top: 1.25rem;
@@ -26,6 +28,10 @@
   flex-direction: column;
   gap: 1.5rem;
 
+  @media (max-width: v.$breakpoint-small) {
+    top: 3.75rem;
+  }
+
   .navLink {
     display: flex;
     align-items: center;
@@ -41,7 +47,7 @@
     content: '';
     position: absolute;
     cursor: pointer;
-    right: 100%; 
+    right: 100%;
     top: 50%;
     transform: translateY(-50%);
     width: 12px;
@@ -49,7 +55,9 @@
     background: var(--surface-light-reverse);
     border-radius: 8px 0 0 8px;
     box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-    transition: width 0.2s ease, height 0.2s ease;
+    transition:
+      width 0.2s ease,
+      height 0.2s ease;
   }
 
   &:hover::before {
