@@ -33,15 +33,20 @@
     justify-content: center;
     align-items: center;
 
-    @media (max-width: v.$breakpoint-small) {
-      justify-content: flex-start;
-      align-items: flex-start;
-    }
-
     .title,
     .subTitle {
       color: var(--surface-light-reverse);
       margin: 0.25rem 0;
+    }
+
+    @media (max-width: v.$breakpoint-small) {
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding-top: 2rem;
+
+      .subTitle {
+        max-width: 50%;
+      }
     }
 
     .contact {

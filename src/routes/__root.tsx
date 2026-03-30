@@ -6,9 +6,10 @@ import {
 } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
-import Footer from '../components/Footer'
+import Footer from '@/components/Footer'
 import { Header } from '@/components/Header'
 import '../styles/global.scss'
+import { Navigation } from '@/components/Navigation'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -48,6 +49,7 @@ function RootComponent() {
     <>
       <HeadContent />
       <Header />
+      <Navigation />
       <Outlet />
       <Footer />
       <TanStackDevtools

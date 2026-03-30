@@ -1,5 +1,4 @@
 import { ThemeToggle } from '@/components/ThemeToggle'
-import { Navigation } from '@/components/Navigation'
 import { Github, LinkedIn, Mail } from '@/components/Icons'
 import styles from './Header.module.scss'
 
@@ -35,7 +34,6 @@ export const Header = () => {
           </a>
         </p>
       </div>
-      <Navigation />
     </header>
   )
 }
