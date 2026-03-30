@@ -2,7 +2,6 @@
 .root {
   display: flex;
   flex-direction: column;
+  height: calc(100dvh - 10rem);
   width: 100%;
-  min-height: calc(100dvh - 10rem); 
-  overflow: visible;
 }
