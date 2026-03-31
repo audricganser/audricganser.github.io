@@ -9,15 +9,10 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ThreeJourneyRouteImport } from './routes/threeJourney'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as ThreeJourneyLessonIdRouteImport } from './routes/threeJourney/$lessonId'
 
-const ThreeJourneyRoute = ThreeJourneyRouteImport.update({
-  id: '/threeJourney',
-  path: '/threeJourney',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
@@ -28,46 +23,44 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ThreeJourneyLessonIdRoute = ThreeJourneyLessonIdRouteImport.update({
+  id: '/threeJourney/$lessonId',
+  path: '/threeJourney/$lessonId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/threeJourney': typeof ThreeJourneyRoute
+  '/threeJourney/$lessonId': typeof ThreeJourneyLessonIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/threeJourney': typeof ThreeJourneyRoute
+  '/threeJourney/$lessonId': typeof ThreeJourneyLessonIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/threeJourney': typeof ThreeJourneyRoute
+  '/threeJourney/$lessonId': typeof ThreeJourneyLessonIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/threeJourney'
+  fullPaths: '/' | '/about' | '/threeJourney/$lessonId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/threeJourney'
-  id: '__root__' | '/' | '/about' | '/threeJourney'
+  to: '/' | '/about' | '/threeJourney/$lessonId'
+  id: '__root__' | '/' | '/about' | '/threeJourney/$lessonId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  ThreeJourneyRoute: typeof ThreeJourneyRoute
+  ThreeJourneyLessonIdRoute: typeof ThreeJourneyLessonIdRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/threeJourney': {
-      id: '/threeJourney'
-      path: '/threeJourney'
-      fullPath: '/threeJourney'
-      preLoaderRoute: typeof ThreeJourneyRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/about': {
       id: '/about'
       path: '/about'
@@ -82,13 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/threeJourney/$lessonId': {
+      id: '/threeJourney/$lessonId'
+      path: '/threeJourney/$lessonId'
+      fullPath: '/threeJourney/$lessonId'
+      preLoaderRoute: typeof ThreeJourneyLessonIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  ThreeJourneyRoute: ThreeJourneyRoute,
+  ThreeJourneyLessonIdRoute: ThreeJourneyLessonIdRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

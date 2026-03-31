@@ -14,7 +14,8 @@ const NavItems = [
   {
     name: 'ThreeJS Journey',
     image: <ThreeJsJourney />,
-    href: '/threeJourney',
+    href: '/threeJourney/$lessonId',
+    params: 3,
   },
 ]
 
@@ -33,6 +34,7 @@ export const Navigation = () => {
         {NavItems.map((i) => (
           <Link
             to={i.href}
+            params={i.params ? { lessonId: i.params } : undefined}
             key={'nav-item-' + i.name}
             className={style.navLink}
             onClick={(e) => e.stopPropagation()}
